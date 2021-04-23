@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   # GET '/about'
   get "about", to: "about#index"
   
-  get "sign_up", to: "registration#new"
-  post "sign_up", to: "registration#create"
+  get "password", to: "passwords#edit", as: :edit_password
+  patch "password", to: "passwords#update"
+
+  get "sign_up", to: "registrations#new"
+  post "sign_up", to: "registrations#create"
   delete "logout", to: "sessions#destroy"
   
   post "sign_in", to: "sessions#create"
